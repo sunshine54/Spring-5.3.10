@@ -17,23 +17,22 @@ import javax.annotation.PostConstruct;
  * @author 周瑜
  */
 @Component
-@Scope("prototype")
 public class UserService  {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-//	@Autowired
-//	private UserServiceBase userServiceBase;
 	@Autowired
-	UserService userService;
+	private UserServiceBase userServiceBase;
+//	@Autowired
+//	UserService userService;
 	@Autowired
 	OrderService orderService;
 
 	@Transactional
 	public void test() {
-		jdbcTemplate.execute("insert t1 values(1,1,1,1,1)");
-		userService.a();
+		//jdbcTemplate.execute("insert t1 values(1,1,1,1,1)");
+		userServiceBase.a();
 	}
 	@Transactional(propagation = Propagation.NEVER)
 	public void a(){

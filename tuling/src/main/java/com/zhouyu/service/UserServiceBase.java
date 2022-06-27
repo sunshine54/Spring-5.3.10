@@ -12,7 +12,7 @@ public class UserServiceBase {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	@Transactional(propagation = Propagation.NEVER)
+	//@Transactional(propagation = Propagation.NEVER)
 	public void a(){
 
 	}
