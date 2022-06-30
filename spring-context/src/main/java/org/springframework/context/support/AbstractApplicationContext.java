@@ -601,6 +601,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				// 把定义的ApplicationListener的Bean对象，设置到ApplicationContext中去，并执行在此之前所发布的事件
 				registerListeners();
 
+				//实例化非懒加载的单例Bean
 				// Instantiate all remaining (non-lazy-init) singletons.
 				finishBeanFactoryInitialization(beanFactory);
 
