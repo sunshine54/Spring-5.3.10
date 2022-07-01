@@ -17,6 +17,7 @@
 package org.springframework.beans.factory.config;
 
 import java.beans.PropertyDescriptor;
+import java.lang.reflect.InvocationTargetException;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;
@@ -71,7 +72,7 @@ public interface InstantiationAwareBeanPostProcessor extends BeanPostProcessor {
 	 * @see org.springframework.beans.factory.support.AbstractBeanDefinition#getFactoryMethodName()
 	 */
 	@Nullable
-	default Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
+	default Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 		return null;
 	}
 

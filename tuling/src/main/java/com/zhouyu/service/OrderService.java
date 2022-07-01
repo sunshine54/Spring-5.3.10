@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@Conditional(LytCondition.class)
 public class OrderService{
 
 }

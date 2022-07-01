@@ -198,7 +198,7 @@ public class InitDestroyAnnotationBeanPostProcessor
 	}
 
 
-	private LifecycleMetadata findLifecycleMetadata(Class<?> clazz) {
+		private LifecycleMetadata findLifecycleMetadata(Class<?> clazz) {
 		if (this.lifecycleMetadataCache == null) {
 			// Happens after deserialization, during destruction...
 			return buildLifecycleMetadata(clazz);
