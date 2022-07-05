@@ -479,6 +479,7 @@ public class AutowiredAnnotationBeanPostProcessor implements SmartInstantiationA
 		// Fall back to class name as cache key, for backwards compatibility with custom callers.
 		String cacheKey = (StringUtils.hasLength(beanName) ? beanName : clazz.getName());
 		// Quick check on the concurrent map first, with minimal locking.
+		//会先去注入点的缓存中去拿，如果能拿到，直接返回
 		InjectionMetadata metadata = this.injectionMetadataCache.get(cacheKey);
 		if (InjectionMetadata.needsRefresh(metadata, clazz)) {
 			synchronized (this.injectionMetadataCache) {
@@ -522,6 +523,7 @@ public class AutowiredAnnotationBeanPostProcessor implements SmartInstantiationA
 					}
 
 					// 构造注入点
+					//判断@Autowired(required=false)
 					boolean required = determineRequiredStatus(ann);
 					currElements.add(new AutowiredFieldElement(field, required));
 				}

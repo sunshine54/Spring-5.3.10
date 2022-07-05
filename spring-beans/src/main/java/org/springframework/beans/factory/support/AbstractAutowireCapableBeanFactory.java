@@ -435,7 +435,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		Object result = existingBean;
 
 		for (BeanPostProcessor processor : getBeanPostProcessors()) {
-			Object current = processor.postProcessAfterInitialization(result, beanName);
+				Object current = processor.postProcessAfterInitialization(result, beanName);
 			if (current == null) {
 				return result;
 			}
@@ -1487,7 +1487,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
 		// 如果当前Bean中的BeanDefinition中设置了PropertyValues，那么最终将是PropertyValues中的值，覆盖@Autowired
 		if (pvs != null) {
-			applyPropertyValues(beanName, mbd, bw, pvs);
+				applyPropertyValues(beanName, mbd, bw, pvs);
 		}
 	}
 

@@ -10,8 +10,4 @@ import org.springframework.context.annotation.*;
 @Configuration
 public class AppConfig {
 
-	@Bean(autowire = Autowire.BY_NAME)
-	public UserService userService(){
-		return new UserService();
-	}
 }
